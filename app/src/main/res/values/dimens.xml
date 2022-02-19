@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="flag_width">320dp</dimen>
+    <dimen name="flag_height">240dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
+</resources>
