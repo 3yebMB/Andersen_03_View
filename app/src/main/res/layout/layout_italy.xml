@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="400dp"
-    android:layout_height="300dp">
+    android:layout_width="@dimen/flag_width"
+    android:layout_height="@dimen/flag_height"
+    android:orientation="horizontal">
 
     <ImageView
-        android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@color/green_italian" />
 
     <ImageView
-        android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@color/white" />
 
     <ImageView
-        android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@color/red_italian" />
 
 </LinearLayout>

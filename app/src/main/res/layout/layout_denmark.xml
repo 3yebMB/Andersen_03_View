@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="400dp"
-    android:layout_height="300dp"
+    android:layout_width="@dimen/flag_width"
+    android:layout_height="@dimen/flag_height"
     android:background="@color/red_danish"
     android:orientation="vertical">
 

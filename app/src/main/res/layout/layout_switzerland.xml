@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="400dp"
-    android:layout_height="400dp"
+    android:layout_width="@dimen/flag_width"
+    android:layout_height="@dimen/flag_width"
     android:background="@color/red_swiss"
     android:orientation="vertical">
 
     <FrameLayout
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="250dp"
+            android:layout_width="200dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:background="@color/white" />
