@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         R.layout.layout_columbia,
         R.layout.layout_madagascar,
         R.layout.layout_thailand,
-        R.layout.layout_thailand,
         R.layout.layout_switzerland
     )
 
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         customLayout = findViewById(R.id.custom_layout)
         findViewById<Button>(R.id.btn_next).setOnClickListener {
-            if (counter < listLayout.size)
+            if (counter < listLayout.size - 1)
                 counter++
             else
                 counter = 0
@@ -37,8 +36,8 @@ class MainActivity : AppCompatActivity() {
         changeView(changeLayout(listLayout[counter]))
     }
 
-    private fun changeLayout(id: Int) : View =
-        LayoutInflater.from(this).inflate(id, null, false)
+    private fun changeLayout(id: Int): View =
+        LayoutInflater.from(this).inflate(id, customLayout, false)
 
     private fun changeView(view: View) {
         customLayout.removeAllViews()
