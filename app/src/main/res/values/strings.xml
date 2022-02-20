@@ -2,5 +2,4 @@
     <string name="app_name">Picture Loader</string>
     <string name="image_number_hint">Put number of image here…</string>
     <string name="button_text">Try to load</string>
-    <string name="image_hint">Images from https://picsum.photos</string>
 </resources>
