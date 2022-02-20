@@ -20,20 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        android:background="@color/image_hint_background"
-        android:text="@string/image_hint"
-        android:textColor="@color/white"
-        android:textStyle="italic"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@id/image_viewer"
-        app:layout_constraintEnd_toEndOf="@id/image_viewer"
-        app:layout_constraintStart_toStartOf="@id/image_viewer" />
-
     <EditText
         android:id="@+id/adress_input"
         android:layout_width="0dp"
