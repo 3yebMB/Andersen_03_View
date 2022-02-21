@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                     target: Target<Bitmap>?,
                     isFirstResource: Boolean
                 ): Boolean {
+                    binding.imageViewer.setImageResource(0)
                     showError()
                     return false
                 }
