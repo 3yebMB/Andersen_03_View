@@ -1,16 +1,12 @@
 package dev.m13d.pictureloader
 
 import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.Target
+import com.squareup.picasso.Picasso
 import dev.m13d.pictureloader.databinding.ActivityMainBinding
 import java.net.URL
 
@@ -30,33 +26,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loader(imageUrl: String) {
-        Glide.with(this)
-            .asBitmap()
-            .load(imageUrl)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .listener(object : RequestListener<Bitmap> {
-                override fun onLoadFailed(
-                    e: GlideException?,
-                    model: Any?,
-                    target: Target<Bitmap>?,
-                    isFirstResource: Boolean
-                ): Boolean {
-                    showError()
-                    return false
-                }
+        Picasso.get().load(imageUrl).into(object : com.squareup.picasso.Target {
+            override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                binding.imageViewer.setImageBitmap(bitmap)
+            }
 
-                override fun onResourceReady(
-                    resource: Bitmap?,
-                    model: Any?,
-                    target: Target<Bitmap>?,
-                    dataSource: DataSource?,
-                    isFirstResource: Boolean
-                ): Boolean {
-                    binding.imageViewer.setImageBitmap(resource)
-                    return true
-                }
-            })
-            .into(binding.imageViewer)
+            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                binding.imageViewer.setImageResource(0)
+                showError()
+            }
+
+            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
+        })
     }
 
     private fun showError() {
